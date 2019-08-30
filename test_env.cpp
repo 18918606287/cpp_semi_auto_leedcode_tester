@@ -20,11 +20,11 @@ double tester<ANS, PARA>::test(string& filename){
         while(this->testcase == "" && !this->testcases.eof()) getline(this->testcases, this->testcase);
         if(this->testcases.eof()) break;
         sum++;
-        
+        cout<<testcase<<endl;
         getline(this->testcases, this->correct_answer);
-        while(this->testcase == "" && !this->testcases.eof()) getline(this->testcases, this->correct_answer);
-        if(this->testcases.eof()) break;
-        
+        while(this->correct_answer == "" && !this->testcases.eof()) getline(this->testcases, this->correct_answer);
+        if(this->testcases.eof() && this->correct_answer == "") break;
+        cout<<correct_answer<<endl;
         PARA para = this->test_resolver(this->testcase);
         ANS ans = this->ans_resolver(this->correct_answer, para);
         ANS your_answer = solver->solve(para);
