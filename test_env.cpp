@@ -39,3 +39,71 @@ double tester<ANS, PARA>::test(string& filename){
 	cout<<"The accuracy of your solution in this testcase set of "<< sum << " tests is "<<(acc*100)<<"% ."<<endl;
 	return acc;
 }
+
+resolvers::resolvers(){}
+
+ListNode* resolvers::ListNode_resolver(string& testname){
+	ListNode* head = new ListNode(0);
+	ListNode* cur = head;
+	int i = 0, j = 0;
+	//find '['
+	while(testname[i] != '[') i++;
+	i++;
+	j = i;
+	while(j < testname.length()){
+		while(testname[j] == ' ') j++;
+		if(!isdigit(testname[j])){
+			while(i < j && !isdigit(testname[i])) i++;
+			if(i == j) break;
+			int sub = stoi(testname.substr(i, j-i));
+			cur->next = new ListNode(sub);
+			cur = cur->next;
+			i = j+1;
+			if(testname[j] == ']') break;
+		}
+		j++;
+	}
+	int pos = stoi(testname.substr(j+1));
+	if(head->next == NULL || pos == -1) return head->next;
+	ListNode* end = cur; 
+	cur = head->next;
+	for(int i = 0; i < pos; i++) cur = cur->next;
+	end->next = cur;
+	cur = head;
+	return head->next;
+}
+
+vector<int> resolvers::vector_int_resolver(string& testname){
+	vector<int> container;
+	int i = 0, j = 0;
+	//find '['
+	while(testname[i] != '[') i++;
+	i++;
+	j = i;
+	while(j < testname.length()){
+		while(testname[j] == ' ') j++;
+		if(!isdigit(testname[j])){
+			while(i < j && !isdigit(testname[i])) i++;
+			if(i == j) break;
+			int sub = stoi(testname.substr(i, j-i));
+			container.push_back(sub);
+			i = j+1;
+			if(testname[j] == ']') break;
+		}
+		j++;
+	}
+	return container;
+}
+
+ListNode* resolvers::ListNode_ListNode_resolver(std::string& ansname, ListNode* para){
+	if(!isdigit(ansname[0])) return NULL;
+	ListNode* head = para;
+	int pos = -1;
+	pos = stoi(ansname);
+	for(int i = 0 ; i < pos; i++){
+		if(head == NULL)
+			break;
+		head = head->next;
+	}
+	return head;
+}

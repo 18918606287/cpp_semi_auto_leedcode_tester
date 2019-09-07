@@ -9,6 +9,14 @@
 #include<stdlib.h>
 #include<string>
 #include<fstream>
+#include<vector>
+
+//Difinition of LinkedList node.
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
 
 template <typename ANS, typename PARA>
 class tester{
@@ -23,6 +31,15 @@ class tester{
 		double test(std::string& filename);
 		PARA test_resolver(std::string& testname);
 		ANS ans_resolver(std::string& ansname, PARA para);
+};
+
+class resolvers{
+	public:
+		resolvers();
+		~resolvers();
+		ListNode* ListNode_resolver(std::string& testname);
+		ListNode* ListNode_ListNode_resolver(std::string& ansname, ListNode* para);
+		vector<int> vector_int_resolver(std::string& testname);
 };
 
 template <typename ANS, typename PARA>
