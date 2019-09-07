@@ -41,4 +41,4 @@ ANS tester<ANS, PARA>::ans_resolver(string& ansname, PARA para){
 }
 ```
 
-I know it's not so convenient but I'm a newbie in cpp and tried my best to do this. If you have some better idea, feel free to PR. If there is anything wrong or confusing, please issue the problem or contact me by email.
+If you have some better idea, feel free to PR. If there is anything wrong or confusing, please issue the problem or contact me by email.
