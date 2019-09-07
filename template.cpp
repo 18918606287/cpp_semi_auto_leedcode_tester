@@ -15,7 +15,8 @@ using namespace::std;
 
 //Your solution function here
 class Solution{
-public:/*
+/* 
+public:
     static ListNode *detectCycle(ListNode *head) {
         if(head == NULL || head->next == NULL || head->next->next == NULL) return NULL;
         ListNode* fast = head->next->next;
