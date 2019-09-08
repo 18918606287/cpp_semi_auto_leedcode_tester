@@ -24,6 +24,7 @@ There are some **default** resolver functions, set the corresponding MACRO into 
 The supported **test type** including
 + ListNode*
 + vector<int>
+ 
 The supported **answer type(test type, return type)** including
 + ListNode*, ListNode*
 **Mention that if the type is the address of object like STL container, put the type without address identifier here.**
