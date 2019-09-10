@@ -27,6 +27,7 @@ The supported **test type** including
  
 The supported **answer type(test type, return type)** including
 + ListNode*, ListNode*
+
 **Mention that if the type is the address of object like STL container, put the type without address identifier here.**
 
 And there are two functions need to be coded yourself. ``test_resolver(string& testname)`` is to tranform your testcase string into a initialization of cpp and ``ans_resolver(string& ansname)`` is to transform your test correct answer into a cpp type.
